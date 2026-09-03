@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --sante-cream: #f6efe4;
+  --sante-paper: #fffaf4;
+  --sante-ink: #1a1714;
+  --sante-green: #0b7a45;
+  --sante-deep: #163326;
+  --sante-red: #e31b23;
+  --sante-kraft: #c4a574;
+}
+
+@theme inline {
+  --color-sante-cream: var(--sante-cream);
+  --color-sante-paper: var(--sante-paper);
+  --color-sante-ink: var(--sante-ink);
+  --color-sante-green: var(--sante-green);
+  --color-sante-deep: var(--sante-deep);
+  --color-sante-red: var(--sante-red);
+  --color-sante-kraft: var(--sante-kraft);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sante-cream);
+  color: var(--sante-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 420;
+  letter-spacing: -0.03em;
+}
+
+.btn-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--sante-red);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.7rem 1.15rem;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn-red:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--sante-green);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.7rem 1.15rem;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn-green:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--sante-ink) 18%, transparent);
+  color: var(--sante-ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.7rem 1.15rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sante-green);
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  border-block: 1px solid color-mix(in srgb, var(--sante-ink) 10%, transparent);
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 2.4rem;
+  animation: drift 28s linear infinite;
+  padding: 0.85rem 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--sante-ink) 55%, transparent);
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
