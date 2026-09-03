@@ -132,11 +132,8 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8">
-        <p className="eyebrow">Nasıl sipariş</p>
-        <h2 className="mt-3 max-w-[16ch] font-display text-4xl md:text-5xl">Kaseleri uygulamalardan isteyin.</h2>
-        <p className="mt-4 max-w-xl text-sante-ink/70">
-          Siteden ödeme veya sepet yok. Yemeksepeti, Trendyol GO, Getir Yemek veya WhatsApp — hangisi elinizin altındaysa.
-        </p>
+        <p className="eyebrow">Sipariş</p>
+        <h2 className="mt-3 font-display text-4xl md:text-5xl">Uygulamadan verin.</h2>
         <div className="mt-10">
           <PlatformGrid />
         </div>

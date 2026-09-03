@@ -26,29 +26,30 @@ export const platforms = [
   {
     id: "yemeksepeti",
     name: "Yemeksepeti",
-    blurb: "Güncel menü ve teslimat için resmi restoran sayfası.",
     href: "https://www.yemeksepeti.com/restaurant/bg0a/sante-bowl",
-    accent: "#FA0050",
+    logo: "/images/platforms/yemeksepeti.svg",
+    tile: "#ffffff",
   },
   {
     id: "trendyol",
     name: "Trendyol GO",
-    blurb: "Uygulamada Sante Bowl Aydın olarak arayın.",
     href: "https://www.trendyol.com/yemek",
-    accent: "#F27A1A",
+    logo: "/images/platforms/trendyol.svg",
+    tile: "#ffffff",
   },
   {
     id: "getir",
     name: "Getir Yemek",
-    blurb: "Getir Yemek’te Sante Bowl’u arayıp sipariş verin.",
     href: "https://getir.com/yemek",
-    accent: "#5D3EBC",
+    logo: "/images/platforms/getir.svg",
+    // Yellow Getir wordmark is meant to sit on the brand purple.
+    tile: "#5D3EBC",
   },
   {
     id: "whatsapp",
     name: "WhatsApp",
-    blurb: "Gel-al ve sorular için doğrudan yazın.",
     href: site.whatsapp,
-    accent: "#25D366",
+    logo: "/images/platforms/whatsapp.svg",
+    tile: "#ffffff",
   },
 ] as const;
