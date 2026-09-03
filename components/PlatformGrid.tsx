@@ -1,30 +1,37 @@
 import { platforms } from "@/lib/site";
 
-export function PlatformGrid({ compact = false }: { compact?: boolean }) {
+/** Clickable platform logos — Yemeksepeti, Trendyol GO, Getir, WhatsApp. */
+export function PlatformGrid() {
   return (
-    <div className={`grid gap-4 ${compact ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-4"}`}>
-      {platforms.map((platform) => (
-        <a
-          key={platform.id}
-          href={platform.href}
-          target="_blank"
-          rel="noreferrer"
-          className="group flex flex-col justify-between rounded-[1.3rem] border border-sante-ink/8 bg-white p-6 transition hover:-translate-y-0.5 hover:border-sante-green/40 hover:shadow-[0_18px_40px_rgba(11,122,69,0.12)]"
-        >
-          <div>
-            <span
-              className="inline-block h-2 w-8 rounded-full"
-              style={{ background: platform.accent }}
+    <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+      {platforms.map((platform) => {
+        const dark = platform.tile !== "#ffffff";
+
+        return (
+          <a
+            key={platform.id}
+            href={platform.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={platform.name}
+            className={`flex h-28 items-center justify-center rounded-[1.4rem] px-5 transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(22,51,38,0.12)] md:h-32 ${
+              dark ? "" : "border border-sante-ink/8 bg-white"
+            }`}
+            style={{ background: platform.tile }}
+          >
+            {/* SVGs are wordmarks/icons; skip next/image so they stay crisp. */}
+            <img
+              src={platform.logo}
+              alt=""
+              className={
+                platform.id === "whatsapp"
+                  ? "h-12 w-12"
+                  : "h-8 w-auto max-w-[150px] object-contain md:h-10"
+              }
             />
-            <h3 className="mt-4 font-display text-2xl text-sante-ink">{platform.name}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-sante-ink/65">{platform.blurb}</p>
-          </div>
-          <p className="mt-6 text-sm font-medium text-sante-green">
-            Platforma git
-            <span className="ml-1 inline-block transition group-hover:translate-x-0.5">→</span>
-          </p>
-        </a>
-      ))}
+          </a>
+        );
+      })}
     </div>
   );
 }
